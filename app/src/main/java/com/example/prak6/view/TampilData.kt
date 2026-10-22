@@ -24,4 +24,25 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.material3.Button
 import com.example.prak6.R
 
-
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun TampilData(
+    onBackBtnClick: () -> Unit
+) {
+    Scaffold(
+        modifier = Modifier,
+        topBar = {
+            TopAppBar(
+                title = { Text(text = stringResource(id = R.string.tampil), color = Color.White) },
+                colors = TopAppBarDefaults.mediumTopAppBarColors(colorResource(id = R.color.teal_700))
+            )
+        }
+    ) { isiRuang ->
+        Column(
+            modifier = Modifier.padding(isiRuang),
+            verticalArrangement = Arrangement.SpaceBetween
+        ) {
+            // Konten data akan ditambahkan di tahap berikutnya
+        }
+    }
+}
